@@ -27,4 +27,9 @@ public class FighterService {
         Fighter fighter = fighterRepository.findById(id).orElseThrow(() -> new RuntimeException("Fighter not found"));
         fighterRepository.delete(fighter);
     }
+
+    public FighterDto getFighterById(Long id) {
+        Fighter fighter = fighterRepository.findById(id).orElseThrow(() -> new RuntimeException("Fighter not found"));
+        return fighterMapper.toDto(fighter);
+    }
 }

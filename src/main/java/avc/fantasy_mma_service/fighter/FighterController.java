@@ -28,4 +28,9 @@ public class FighterController {
     public void deleteFighter(@PathVariable Long id) {
         fighterService.deleteFighter(id);
     }
+
+    @GetMapping("/{id}")
+    public FighterDto getFighterById(@PathVariable Long id) {
+        return fighterService.getFighterById(id);
+    }
 }
