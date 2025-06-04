@@ -4,6 +4,8 @@ package avc.fantasy_mma_service.user;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/users")
@@ -23,5 +25,10 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
+    }
+
+    @GetMapping("")
+    public List<UserDto> getAllUsers() {
+        return userService.getAllUsers();
     }
 }
