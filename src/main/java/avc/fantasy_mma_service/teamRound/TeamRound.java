@@ -1,12 +1,14 @@
 package avc.fantasy_mma_service.teamRound;
 
-
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.List;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class TeamRound {
 
     @Id
@@ -18,7 +20,7 @@ public class TeamRound {
     private long eventId;
 
     @ElementCollection
-    private List<Long> fighterIds;
+    private Set<Long> fighterIds;
 
 
 }
